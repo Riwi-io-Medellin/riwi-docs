@@ -1,0 +1,35 @@
+:root {
+  --ifm-color-primary: #6545FF; /* Azul del logo */
+  --ifm-color-primary-dark: #5438E0;
+  --ifm-color-primary-darker: #4328C2;
+  --ifm-color-primary-darkest: #2A199B;
+  --ifm-color-primary-light: #755BFF;
+  --ifm-color-primary-lighter: #8671FF;
+  --ifm-color-primary-lightest: #9787FF;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+
+  /* Colores adicionales basados en la imagen */
+  --ifm-color-accent-yellow: #F2C94C; /* Amarillo */
+  --ifm-color-accent-orange: #F2994A; /* Naranja */
+  --ifm-color-accent-green: #27AE60;  /* Verde */
+  --ifm-color-accent-pink: #EB5757;   /* Rosa */
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #6545FF;
+  --ifm-color-primary-dark: #3B2C8C;
+  --ifm-color-primary-darker: #2D236A;
+  --ifm-color-primary-darkest: #201954;
+  --ifm-color-primary-light: #5B49D6;
+  --ifm-color-primary-lighter: #6A5BEB;
+  --ifm-color-primary-lightest: #7D70FF;
+
+  --ifm-color-accent-yellow: #C7A644;
+  --ifm-color-accent-orange: #D27F3D;
+  --ifm-color-accent-green: #1E8449;
+  --ifm-color-accent-pink: #C14A4A;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
+}
