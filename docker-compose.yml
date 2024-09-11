@@ -1,5 +1,5 @@
 services:
   frontend:
-    image: nicolasriwi/coworking-frontend:latest
+    image: docs
     ports:
       - "3001:80"

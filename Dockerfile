@@ -20,9 +20,9 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copiar el código fuente compilado a la carpeta de Nginx
-COPY --from=0 /build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
 
-# Copy custom Nginx configuration file
+# Copiar el archivo de configuración de Nginx personalizado
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exponer el puerto
