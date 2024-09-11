@@ -110,12 +110,11 @@ Copia y pega este contenido dentro de `main.yml`:
 
 
 ```yaml
-name: CI/CD
+name: Deploy CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -124,11 +123,13 @@ jobs:
       contents: read
       packages: write
       actions: write
+
     steps:
     - name: Enable debug logging
       run: echo "RUNNER_DEBUG=true" >> $GITHUB_ENV
-      
-    - uses: actions/checkout@v2
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
     - name: Convert to lowercase
       id: string
@@ -150,26 +151,40 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-    - name: Build and push Docker image to GitHub Container Registry
+    - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ steps.string.outputs.OWNER_LOWER }}/${{ steps.string.outputs.REPO_LOWER }}:${{ github.sha }}
+        tags: |
+          ghcr.io/${{ steps.string.outputs.OWNER_LOWER }}/${{ steps.string.outputs.REPO_LOWER }}:latest
+          ghcr.io/${{ steps.string.outputs.OWNER_LOWER }}/${{ steps.string.outputs.REPO_LOWER }}:${{ github.sha }}
+        build-args: --no-cache
 
-    - name: Deploy to Docker Swarm
-      env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
-        ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOST} << EOF
-          # Forzar la actualización de la imagen
+    - name: Deploy to VPS using SSH
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          # Cambiar al directorio de la aplicación en el servidor
+          cd /var/www/${{ steps.string.outputs.REPO_LOWER }}
+
+          # Detener el contenedor que utiliza la imagen `latest`
+          docker-compose down
+          
+          # Eliminar la imagen `latest` existente para forzar la descarga de la nueva
+          docker rmi ghcr.io/${{ steps.string.outputs.OWNER_LOWER }}/${{ steps.string.outputs.REPO_LOWER }}:latest || true
+          
+          # Descargar la nueva imagen utilizando el SHA del commit
           docker pull ghcr.io/${{ steps.string.outputs.OWNER_LOWER }}/${{ steps.string.outputs.REPO_LOWER }}:${{ github.sha }}
-          # Verificar el estado del servicio
-          docker service ps ${{ steps.string.outputs.REPO_LOWER }} --no-trunc
-        EOF
+          
+          # Recrear los contenedores con la nueva imagen
+          docker-compose up -d --force-recreate
+          
+          # Limpiar imágenes antiguas no utilizadas
+          docker image prune -a -f
 ```
 
 ### Explicación del Workflow
