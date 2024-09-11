@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introducción
 
-La infraestructura de Riwi está diseñada para facilitar el despliegue y la gestión de aplicaciones de software a escala. Aprovechando la potencia y flexibilidad de **[Hetzner](https://www.hetzner.com)** como proveedor de servicios, nuestro sistema garantiza altos niveles de seguridad, escalabilidad y eficiencia operativa. Esta documentación tiene como objetivo proporcionar una guía completa para los desarrolladores y administradores que deseen configurar, desplegar y mantener aplicaciones en esta infraestructura. Desde la configuración inicial hasta el monitoreo y la orquestación, encontrarás todo lo necesario para optimizar el flujo de trabajo.
+La **infraestructura de Riwi** está diseñada para facilitar el despliegue y la gestión de aplicaciones de software a escala. Aprovechando la potencia y flexibilidad de **[Hetzner](https://www.hetzner.com)** como proveedor de servicios, nuestro sistema garantiza altos niveles de seguridad, escalabilidad y eficiencia operativa. Esta documentación tiene como objetivo proporcionar una **guía completa** para los desarrolladores y administradores que deseen configurar, desplegar y mantener aplicaciones en esta infraestructura. Desde la configuración inicial hasta el monitoreo y la orquestación, encontrarás todo lo necesario para optimizar el flujo de trabajo.
 
 <div style={{ textAlign: 'center' }}>
   <a href="https://www.hetzner.com" target="_blank">
