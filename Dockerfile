@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copiar el código fuente compilado a la carpeta de Nginx
-COPY --from=0 /app/dist /usr/share/nginx/html
+COPY --from=0 /dist /usr/share/nginx/html
 
 # Copy custom Nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
