@@ -27,7 +27,7 @@ Dockerizar una aplicación implica empaquetarla junto con todas sus dependencias
 3. **EXPOSE** indica que la aplicación se ejecutará en el puerto 80.
 4. **ENTRYPOINT** define el comando para iniciar la aplicación .dll.
 
-```dockerfile
+```dockerfile title="Dockerfile"
 # Primera etapa: Construcción de la imagen
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
@@ -56,7 +56,7 @@ ENTRYPOINT ["dotnet", "YourApp.dll"]
 4. **EXPOSE:** Abre el puerto 3000.
 5. **CMD:** Define el comando para ejecutar la aplicación usando `npm start`.
 
-```dockerfile
+```dockerfile title="Dockerfile"
 FROM node:18-alpine3.15
 
 WORKDIR /app
@@ -81,7 +81,7 @@ CMD ["npm", "start"]
 3. **EXPOSE:** Abre el puerto 8080, que es el puerto donde Spring Boot ejecuta la aplicación por defecto.
 4. **ENTRYPOINT:** Define el comando para ejecutar la aplicación con `java -jar`.
 
-```dockerfile
+```dockerfile title="Dockerfile"
 FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
@@ -105,7 +105,7 @@ Para un **Dockerfile** que funcione para cualquier aplicación **frontend**, pue
 
 En la raiz de tu proyecto crea un archivo llamado `Dockerfile` y escribe el siguiente codigo
 
-```dockerfile
+```dockerfile title="Dockerfile"
 # Utilizar una imagen base de Node.js
 FROM node:latest
 
@@ -148,7 +148,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 En la raiz de tu proyecto crea un archivo llamado `nginx.conf` y escribe el siguiente codigo
 
-```conf
+```conf title="nginx.conf"
 http {
 
   include mime.types;

@@ -109,7 +109,7 @@ Este workflow automatiza el despliegue de la aplicación utilizando Docker y Doc
 Copia y pega este contenido dentro de `main.yml`:
 
 
-```yaml
+```yaml title="main.yml"
 name: Deploy CI/CD
 
 on:
