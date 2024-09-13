@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Riwi Infrastructure",
+  title: "Infraestructura Riwi",
   tagline: "Optimizing deployment and scalability with ease",
   favicon: "img/favicon.png",
 
@@ -90,7 +90,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Documentation",
+          label: "Documentación",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
