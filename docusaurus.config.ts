@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Infraestructura Riwi",
+  title: "Documentación Riwi",
   tagline: "Optimizing deployment and scalability with ease",
   favicon: "img/favicon.png",
 
@@ -25,16 +25,18 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"], // Idiomas que quieres soportar
+    defaultLocale: 'es', // Idioma predeterminado
+    locales: ['es', 'en'], // Idiomas disponibles
     localeConfigs: {
-      en: {
-        label: "English",
-        direction: "ltr",
-      },
       es: {
-        label: "Español",
-        direction: "ltr",
+        label: 'Español',
+        direction: 'ltr', // LTR significa "Left to Right" (De izquierda a derecha)
+        htmlLang: 'es-ES',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
       },
     },
   },

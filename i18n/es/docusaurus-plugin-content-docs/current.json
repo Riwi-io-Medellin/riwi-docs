@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Infraestructura": {
+    "message": "Infraestructura",
+    "description": "The label for category Infraestructura in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Infraestructura.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Infraestructura in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Comenzando": {
+    "message": "Comenzando",
+    "description": "The label for category Comenzando in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Comenzando.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Comenzando in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Despliegue": {
+    "message": "Despliegue",
+    "description": "The label for category Despliegue in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Despliegue.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Despliegue in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Servidor": {
+    "message": "Servidor",
+    "description": "The label for category Servidor in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Servidor.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Servidor in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Centinela": {
+    "message": "Centinela",
+    "description": "The label for category Centinela in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Centinela.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Centinela in sidebar tutorialSidebar"
+  }
+}
