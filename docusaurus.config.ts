@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Documentación Riwi",
+  title: "Documentación Riwi Building...",
   tagline: "Optimizing deployment and scalability with ease",
   favicon: "img/favicon.png",
 
