@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import useAuth from '../hooks/use-auth';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -29,6 +30,7 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
+  useAuth(); 
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
