@@ -2,12 +2,12 @@ import React from 'react';
 import useAuth from '../hooks/use-auth';
 
 export default function Root({ children }) {
-  const loading = useAuth();
+  // const loading = useAuth();
 
-  if (loading) {
+  // if (loading) {
 
-    return <div>Cargando...</div>;
-  }
+  //   return <div>Cargando...</div>;
+  // }
 
   return <>{children}</>;
 }
