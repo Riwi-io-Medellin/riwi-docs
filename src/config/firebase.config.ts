@@ -6,6 +6,7 @@ import {
   OAuthProvider,
   Auth,
 } from "firebase/auth";
+import { getEnv } from "./env.config";
 
 // Define the type for the Firebase configuration object
 interface FirebaseConfig {
@@ -17,18 +18,16 @@ interface FirebaseConfig {
   appId: string;
   measurementId?: string;
 }
-
 // Your web app's Firebase configuration
-const firebaseConfig:FirebaseConfig = {
-  apiKey: "AIzaSyClTF2T7gxptE0_gL9MZCyksGtSuQnbazs",
-  authDomain: "riwi-centinela-prod.firebaseapp.com",
-  projectId: "riwi-centinela-prod",
-  storageBucket: "riwi-centinela-prod.appspot.com",
-  messagingSenderId: "510954057846",
-  appId: "1:510954057846:web:49cb7bf49fc9857c016f57",
-  measurementId: "G-L1QXQYPX8S"
+const firebaseConfig: FirebaseConfig = {
+  apiKey: getEnv().apiKey,
+  authDomain: getEnv().authDomain,
+  projectId: getEnv().projectId,
+  storageBucket: getEnv().storageBucket,
+  messagingSenderId: getEnv().messagingSenderId,
+  appId: getEnv().appId,
+  measurementId: getEnv().measurementId,
 };
-
 
 // Initialize Firebase application with the provided configuration
 const app = initializeApp(firebaseConfig);

@@ -2,14 +2,17 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import path from 'path';
+import dotenv  from "dotenv"
 
+
+dotenv.config()
 const config: Config = {
-  title: "Documentación Riwi Building...",
+  title: "Documentación Tecnica Riwi",
   tagline: "Optimizing deployment and scalability with ease",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://docs.riwi.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -42,6 +45,16 @@ const config: Config = {
         htmlLang: 'en-US',
       },
     },
+  },
+
+  customFields: {
+    REACT_APP_FIREBASE_API_KEY: process.env.REACT_APP_FIREBASE_API_KEY,
+    REACT_APP_FIREBASE_AUTH_DOMAIN: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    REACT_APP_FIREBASE_PROJECT_ID: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    REACT_APP_FIREBASE_STORAGE_BUCKET: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    REACT_APP_FIREBASE_APP_ID: process.env.REACT_APP_FIREBASE_APP_ID,
+    REACT_APP_FIREBASE_MEASUREMENT_ID: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
   },
 
   presets: [
@@ -98,10 +111,14 @@ const config: Config = {
           position: "left",
           label: "Documentación",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/Riwi-io-Medellin",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          to: "/logout", // Apunta a la nueva página de logout
+          label: "Logout",
           position: "right",
         },
       ],
