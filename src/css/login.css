@@ -1,55 +1,99 @@
+:root {
+  --primary: #6B5CFF;
+  --primary-dark: #181E4B;
+  --card-background: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+}
 .login-container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: "radial-gradient(circle at 70% 18%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 41%,transparent 41%, transparent 100%),radial-gradient(circle at 6% 94%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 52%,transparent 52%, transparent 100%),radial-gradient(circle at 93% 63%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 85%,transparent 85%, transparent 100%),radial-gradient(circle at 5% 85%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 8%,transparent 8%, transparent 100%),radial-gradient(circle at 49% 93%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 37%,transparent 37%, transparent 100%),linear-gradient(45deg, rgb(24,30,75),rgb(107,92,255))",
+  background-image: 
+  radial-gradient(circle at 70% 18%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 41%,transparent 41%, transparent 100%),
+  radial-gradient(circle at 6% 94%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 52%,transparent 52%, transparent 100%),
+  radial-gradient(circle at 93% 63%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 85%,transparent 85%, transparent 100%),
+  radial-gradient(circle at 5% 85%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 8%,transparent 8%, transparent 100%),
+  radial-gradient(circle at 49% 93%, hsla(126,0%,77%,0.05) 0%, hsla(126,0%,77%,0.05) 37%,transparent 37%, transparent 100%),
+  linear-gradient(45deg, var(--primary-dark), var(--primary));
+	background-size: cover;
+	background-repeat: no-repeat
 }
 
-.login-card {
-  background-color: white;
-  padding: 2rem;
+.card {
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Estilo general del botón de inicio con Microsoft */
-.login-card button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 12px;
-  background-color: #2f2f2f; /* Fondo oscuro como el estilo típico de Microsoft */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 400px;
+  padding: 2rem;
 }
 
-/* Icono de Microsoft (puedes agregarlo si quieres) */
-.login-card button .microsoft-icon {
-  margin-right: 8px;
+.card-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.logo-bracket {
+  color: var(--purple);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #4B5563;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.microsoft-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  background-color: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.microsoft-button:hover {
+  background-color: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
+.microsoft-icon {
+  margin-right: 0.5rem;
   width: 20px;
   height: 20px;
 }
 
-/* Hover effect para el botón */
-.login-card button:hover {
-  background-color: #1a1a1a; /* Más oscuro al pasar el cursor */
+.card-footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6B7280;
 }
 
-/* Añadir margen inferior al botón */
-.login-card button {
-  margin-top: 20px;
-}
-
-/* Mensaje de error */
-.login-card p {
-  margin-top: 10px;
-  color: red;
+.error-message {
+  color: #DC2626;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }

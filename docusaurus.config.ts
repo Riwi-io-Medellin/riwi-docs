@@ -3,14 +3,16 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import path from 'path';
 import dotenv  from "dotenv"
+
+
 dotenv.config()
 const config: Config = {
-  title: "Documentación Riwi Building...",
+  title: "Documentación Tecnica Riwi",
   tagline: "Optimizing deployment and scalability with ease",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://docs.riwi.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -109,10 +111,14 @@ const config: Config = {
           position: "left",
           label: "Documentación",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/Riwi-io-Medellin",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          to: "/logout", // Apunta a la nueva página de logout
+          label: "Logout",
           position: "right",
         },
       ],

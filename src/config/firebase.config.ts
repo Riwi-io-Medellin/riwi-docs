@@ -18,7 +18,6 @@ interface FirebaseConfig {
   appId: string;
   measurementId?: string;
 }
-console.log(getEnv())
 // Your web app's Firebase configuration
 const firebaseConfig: FirebaseConfig = {
   apiKey: getEnv().apiKey,
