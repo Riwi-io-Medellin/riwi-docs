@@ -30,7 +30,7 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  useAuth(); 
+  // useAuth(); 
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
