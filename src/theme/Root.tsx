@@ -7,6 +7,7 @@ export default function Root({ children }) {
   // const loading = useAuth();
 
   // if (loading) {
+
   //   return <div>Cargando...</div>;
   // }
 
